@@ -1,0 +1,12 @@
+.section-head {
+    font-size: 32px;
+    font-weight: 500;
+    color: #fff;
+    width: 90%;
+
+    @media(min-width: 993px) {
+        font-size: 64px;
+        color: #fff;
+        width: 87%;
+    }
+}

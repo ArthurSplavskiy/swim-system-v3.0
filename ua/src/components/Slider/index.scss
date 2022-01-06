@@ -1,0 +1,11 @@
+.slider-section {
+    .section-head {
+        margin-bottom: 80px;
+        @media(max-width: 1240px) {
+            margin-bottom: 32px;
+        }
+    }
+    ._container {
+        position: relative;
+    }
+}

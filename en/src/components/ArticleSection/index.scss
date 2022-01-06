@@ -1,0 +1,105 @@
+@import '../../other/mixins.scss';
+
+.article-section {
+    .article-block {
+        margin-top: 120px;
+        @media(max-width: 992px) {
+            margin-top: 32px;
+        }
+
+        .image-side h2 {
+            span {
+                color: #fff;
+            }
+            @media(max-width: 992px) {
+                display: none;
+            }
+        }
+        .content-side {
+            @media(max-width: 992px) {
+                margin: 32px 0 50px 0;
+            }
+        }
+        
+    }
+    .parallax-item {
+        img {
+            transform: translateY(-28%);
+            @media(max-width: 992px) {
+                transform: translateY(-5%);
+            }
+        }
+    }
+}
+.article-block .content {
+    display: flex;
+    @media(max-width: 992px) {
+        flex-direction: column;
+    }
+
+    .image-side {
+        position: relative;
+        flex: 0 0 584/1200 * 100%;
+        @media(min-width: 1920px) {
+            flex: 0 1 584px;
+        }
+
+        h2 {
+            position: absolute;
+            top: 60%;
+            left: 78%;
+            text-align: left;
+            width: 110%;
+            font-weight: 500;
+            font-size: 80px;
+            line-height: calc(96 / 80 * 100%);
+            color: #088ECB;
+            @media(min-width: 1920px) {
+                left: 107%;
+            }
+            @media(min-width: 993px) and (max-width: 1220px) {
+                top: 70%;
+                font-size: 56px;
+                line-height: calc(66 / 56 * 100%)
+            }
+            &::first-line {
+                color: #fff;
+            }
+        }
+    }
+    .content-side {
+        flex: 0 0 430/1200 * 100%;
+        display: flex;
+        flex-direction: column;
+        @media(min-width: 1221px) {
+            margin-left: 186px;
+        }
+        @media(min-width: 993px) and (max-width: 1220px) {
+            margin-left: 80px;
+        }
+
+        @media(min-width: 1920px) {
+            flex: 1 0 430/1200 * 100%;
+        }
+        &__wrapper {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        &__body {
+            position: relative;
+            padding-bottom: 10px;
+            flex: 1 1 100%;
+
+            .main-button {
+                @include adaptiv-value('margin-top', 48, 32, 1);
+            }
+            ._line-bar-bottom:last-child {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+        }
+    }
+}

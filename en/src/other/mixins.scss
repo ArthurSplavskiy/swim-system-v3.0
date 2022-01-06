@@ -1,0 +1,29 @@
+@mixin adaptiv-value($indentType, $pcSize, $mobSize, $maxSize) {
+	$addSize: $pcSize - $mobSize;
+	@if $maxSize==1 {
+		//Только если меньше контейнера
+		#{$indentType}: $pcSize + px;
+		@media (max-width: #{1200 + px}) {
+			#{$indentType}: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{1440 - 320}));
+		}
+	} @else if $maxSize==2 {
+		//Только если больше контейнера
+		#{$indentType}: $pcSize + px;
+		@media (min-width: #{1200 + px}) {
+			#{$indentType}: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{1440 - 320}));
+		}
+	} @else {
+		//Всегда
+		#{$indentType}: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{1440 - 320}));
+	}
+}
+
+@mixin vh($value: 100) {
+	height: #{$value * 1vh}!important;
+	height: calc(var(--vh, 1vh) * #{$value})!important;
+}
+
+@mixin minVh($value: 100) {
+	min-height: #{$value * 1vh};
+	min-height: calc(var(--vh, 1vh) * #{$value});
+}

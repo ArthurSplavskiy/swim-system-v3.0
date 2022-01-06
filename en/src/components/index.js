@@ -1,0 +1,14 @@
+export { default as ArticleSection } from "./ArticleSection";
+export { default as BeamsBlock } from "./BeamsBlock";
+export { default as BubblesBlock } from './BubblesBlock';
+export { default as Competition } from "./Competition";
+export { default as FaqsSection } from "./FaqsSection";
+export { default as FormSection } from "./FormSection";
+export { default as GalleryBlock } from "./GalleryBlock";
+export { default as InfoSection } from "./InfoSection";
+export { default as LocationSection } from "./LocationsSection";
+export { default as MobileMenu } from "./MobileMenu";
+export { default as Navbar } from "./Navbar";
+export { default as PoolSection } from "./PoolSection";
+export { default as PromoSection } from "./PromoSection";
+export { default as Slider } from "./Slider";

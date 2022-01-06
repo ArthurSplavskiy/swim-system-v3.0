@@ -1,0 +1,107 @@
+@import '../../other/mixins.scss';
+
+.timetable {
+    color: #fff;
+
+    
+    .mobile {
+        display: none;
+        @media(max-width: 768px) {
+            display: block;
+        }
+    }
+    
+    &__block {
+        @include adaptiv-value('margin-bottom', 48, 32, 1);
+    }
+    &__item {
+        display: grid;
+        grid-template-columns: 32px 1fr 4fr 2.6fr 2fr;
+        gap: 30px;
+        @media(max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+        &:not(:last-child) {
+            @include adaptiv-value('margin-bottom', 36, 24, 1);
+        }
+
+        .icon-column {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 0 0 auto;
+            img {
+                @include adaptiv-value('width', 32, 16, 1);
+                @include adaptiv-value('height', 32, 16, 1);
+                @media(max-width: 768px) {
+                    margin-right: 8px;
+                }
+            }
+            @media(max-width: 768px) {
+                justify-content: space-between;
+            }
+            div:first-child {
+                display: flex;
+                align-items: center;
+            }
+        }
+        .time-column {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &.desktop {
+                display: flex;
+                @media(max-width: 768px) {
+                    display: none;
+                }
+            }
+        }
+        .center-column {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .right-column {
+            a {
+                display: inline-block;
+            }
+        }
+        .coach-column {
+            display: flex;
+            align-items: center;
+            &.desktop {
+                display: flex;
+                @media(max-width: 768px) {
+                    display: none;
+                }
+            }
+            
+            span {
+                @include adaptiv-value('font-size', 20, 12, 1);
+                @include adaptiv-value('line-height', 30, 15, 1); 
+            }
+        }
+    }
+    &__head {
+        padding-bottom: 16px;
+        @include adaptiv-value('margin-bottom', 40, 24, 1);
+        border-bottom: 1px solid #828282;
+        span {
+            @include adaptiv-value('font-size', 12, 10, 1);
+            @include adaptiv-value('line-height', 19.2, 16, 1);
+            text-transform: uppercase;
+        }
+    }
+    .location-address {
+        display: block;
+        @include adaptiv-value('font-size', 14, 10, 1);
+        @include adaptiv-value('line-height', 16.8, 16, 1);
+        text-transform: uppercase;
+        color: #828282;
+    }
+    .location-name {
+        display: block;
+        @include adaptiv-value('font-size', 20, 16, 1);
+        @include adaptiv-value('line-height', 28, 20, 1);
+    }
+}

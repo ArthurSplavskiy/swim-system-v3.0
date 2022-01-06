@@ -1,0 +1,45 @@
+.form-section {
+    background: #088ECB;
+    height: 100vh;
+    padding: 110px 0 64px 0;
+    @media(max-width: 992px) {
+        height: auto;
+        padding: 48px 0 16px 0;
+    }
+
+    .mobile-text {
+        @media(min-width: 993px) {
+            display: none!important;
+        }
+    }
+    ._text-on-scroll, ._element-on-scroll {
+        @media(max-width: 992px) {
+            display: none!important;
+        }
+    }
+    ._container {
+        height: 100%;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .side-1 {
+            overflow: hidden;
+            font-size: 20px;
+            font-weight: 500;
+            color: #fff;
+            @media(max-width: 992px) {
+                font-size: 14px;
+            }
+        }
+        .side-2 {
+            overflow: hidden;
+            a {
+                display: inline-block;
+            }
+        }
+    }
+}

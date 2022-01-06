@@ -1,0 +1,50 @@
+.main-button {
+    position: relative;
+    white-space: nowrap;
+    text-align: center;
+    width: 100%;
+    background: transparent;
+    border: 1px solid #FFFFFF;
+    color: #fff;
+    font-size: 14px;
+    line-height: calc(22.4 / 14 * 100%);
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 14px 36px 12px 36px;
+    transition: color .3s cubic-bezier(.215,.61,.355,1);
+    cursor: pointer;
+    z-index: 1;
+    &:disabled {
+        color: #828282;
+        border-color: #4F4F4F;
+        cursor: not-allowed;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        top: -1px;
+        bottom: -1px;
+        right: -1px;
+        left: -1px;
+        z-index: -1;
+        background-color: #fff;
+        transform-origin: center top;
+        transform: translateZ(0) scaleY(0);
+        transition: transform .3s cubic-bezier(.215,.61,.355,1);
+    }
+
+    &_big {
+        padding: 25px;
+    }
+
+    @media(any-hover: hover) {
+        &:hover{
+            color: #000;
+            &:before {
+                transform: translateZ(0) scaleY(1);
+                transform-origin: center bottom;
+            }
+        }
+    }
+
+}

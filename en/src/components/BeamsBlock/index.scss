@@ -1,0 +1,251 @@
+@import '../../other/mixins.scss';
+
+.beams-section {
+    background: url('../../img/noise.png') fixed;
+    overflow: hidden;
+    position: relative;
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background: #010101;
+        opacity: 0.99;
+        @media(min-width: 993px) {
+            z-index: -1;
+        }
+    }
+    
+    // width
+    @media(max-width: 375px) {
+        max-height: 270px;
+    }
+    @media(max-width: 992px) {
+        height: 80vh;
+        &:before {
+            content: '';
+            height: 4px;
+            width: 100%;
+            background: #2C2C2C;
+            position: absolute;
+            top: 0;
+            z-index: 2;
+        }
+    }
+    @media(max-width: 768px) {
+        height: 60vh;
+    }
+    @media(max-width: 530px) {
+        height: 42vh;
+    }
+    @media(min-width: 992px) {
+        @include vh(100);
+
+        height: 100vh;
+        min-height: 768px;
+    }
+
+    // ==================== || BEAMS { || ==================== \\
+    .beams {
+        z-index: 3;
+        width: 100vw;
+        height: 15px;
+        position: relative;
+
+        // width
+        @media(min-width: 993px) {
+            z-index: 2;
+        }
+        @media(max-width: 992px) {
+            position: absolute;
+            top: 0;
+        }
+        @media(max-width: 1365px) {
+            top: -100px;
+        }
+        @media(min-width: 1366px) {
+            top: -80px;
+        }
+
+        .lateral-left {
+            left: 25%;
+            transform: rotate(60deg);
+
+            // width
+            @media(max-width: 992px) {
+                left: 50%;
+            }
+            @media(max-width: 375px) {
+                left: 65%;
+            }
+        }
+        .center-left {
+            left: 40%;
+            transform: rotate(45deg);
+
+            // width
+            @media(max-width: 992px) {
+                left: 55%;
+            }
+            @media(max-width: 375px) {
+                left: 65%;
+            }
+        }
+        .center-right {
+            right: 40%;
+            transform: rotate(-45deg);
+
+            // width
+            @media(max-width: 992px) {
+                right: 55%;
+            }
+            @media(max-width: 375px) {
+                right: 65%;
+            }
+        }
+        .lateral-right {
+            right: 25%;
+            transform: rotate(-60deg);
+            height: 78px;
+
+            // width
+            @media(max-width: 992px) {
+                right: 50%;
+            }
+            @media(max-width: 375px) {
+                right: 65%;
+            }
+        }
+
+        .beam {
+            position: absolute;
+            width: 15px;
+            height: 50px;
+            background: #2C2C2C;
+            transform-origin: 0 0;
+
+            // width
+            @media(max-width: 992px) {
+                width: 4px;
+            }
+            @media(max-width: 992px) {
+                height: 1000px;
+            }
+            
+        }
+
+    }
+    // ==================== || BEAMS } || ==================== \\
+
+    // ==================== || TABLES { || ==================== \\
+    .tables {
+        position: absolute;
+        width: 100%;
+        z-index: 3;
+        transform: translate(50%, -90%);
+
+        // width
+        @media(min-width: 993px) {
+            z-index: 2;
+            transform: translateX(120%);
+        }
+        @media(max-width: 993px) {
+            bottom: 5%!important;
+        }
+        @media(max-width: 530px) {
+            bottom: 12%!important;
+            transform: translate(50%, -70%);
+        }
+
+        .tables-wrapper {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            position: relative;
+    
+            img {
+                width: 100%;
+                height: 100%;
+
+                // height
+                @media(max-height: 900px) {
+                    width: 80%;
+                    height: auto;
+                }
+                @media(max-height: 800px) {
+                    width: 70%;
+                }
+            }
+            .table-con {
+                position: relative;
+                flex: 0 0 calc(100% / 3);
+                display: flex;
+                justify-content: center;
+            }
+            .second-con {
+                max-width: 100%;
+                flex: 0 0 calc(100% / 3);
+            }
+            .third-con {
+                right: calc((-100% / 3) / 2);
+            }
+            .first-con {
+                right: calc((100% / 3) / 2);
+            }
+            .table-1 {
+                transform-origin: 50% 100%;
+            }
+        }
+    }
+    // ==================== || TABLES } || ==================== \\
+
+    // ==================== || SWIMMER { || ==================== \\
+    .parallax-swimmer {
+        z-index: 3;
+        position: absolute;
+        
+        left: 0;
+        width: 100%;
+        img {
+            width: 100%;
+        }
+
+        // width
+        @media(min-width: 993px) {
+            z-index: 2;
+            top: 100%;
+        }
+        @media(max-width: 993px) {
+            bottom: 2%;
+        }
+    }
+    // ==================== || SWIMMER } || ==================== \\
+
+    // ==================== || DROPS { || ==================== \\
+    .drops {
+        z-index: 2;
+        position: absolute;
+        width: 100%;
+        img {
+            width: 100%;
+        }
+
+        // width
+        @media(max-width: 993px) {
+            bottom: 20%!important;
+        }
+        @media(min-width: 993px) {
+            z-index: 1;
+        }
+        @media(max-width: 375px) {
+            bottom: 25%!important;
+        }
+    }
+    // ==================== || DROPS } || ==================== \\
+    
+}

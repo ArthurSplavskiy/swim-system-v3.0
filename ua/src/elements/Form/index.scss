@@ -1,0 +1,174 @@
+.desktop-text {
+    @media(max-width: 993px) {
+        display: none!important;
+    }
+}
+.mobile-text {
+    @media(min-width: 993px) {
+        display: none!important;
+    }
+}
+.form-section__wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+    ._text-on-scroll, ._element-on-scroll {
+        @media(max-width: 992px) {
+            display: none!important;
+        }
+    }
+}
+.form-section__content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 156px;
+    @media(max-width: 992px) {
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+
+    .contacts-wrapper {
+        flex: 0 0 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        @media(max-width: 992px) {
+            flex: 0 0 auto;
+        }
+
+        p {
+            font-size: 64px;
+            font-weight: 500;
+            color: #fff;
+            margin-bottom: 44px;
+            @media(max-width: 992px) {
+                font-size: 32px;
+                margin-bottom: 40px;
+            }
+        }
+        .contacts-links {
+            list-style-type: none;
+
+            li:not(:last-child) {
+                margin-bottom: 24px;
+                @media(max-width: 992px) {
+                    margin-bottom: 16px;
+                }
+            }
+            a {
+                display: inline-block;
+                font-size: 24px;
+                font-weight: 500;
+                color: #fff;
+                text-decoration: none;
+                @media(max-width: 992px) {
+                    font-size: 16px;
+                }
+            }
+        }
+        .contacts-social {
+            list-style-type: none;
+            display: flex;
+            @media(max-width: 992px) {
+                margin: 40px 0;
+            }
+            
+            li:not(:last-child) {
+                margin-right: 24px;
+            }
+            a {
+                display: inline-flex;
+                width: 64px;
+                height: 64px;
+                border-radius: 100%;
+                border: 1px solid #fff;
+                position: relative;
+                @media(max-width: 992px) {
+                    width: 48px;
+                    height: 48px;
+                }
+
+                img {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+    }
+    .form-wrapper {
+        flex: 0 0 50%;
+        @media(max-width: 992px) {
+            flex: 0 0 auto;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+
+            &__input-group {
+                overflow: hidden;
+                margin: 0 0 40px 0;
+
+                @media(max-width: 992px) {
+                    margin: 0 0 24px 0;
+                }
+
+                ._line-on-scroll {
+                    background: #fff;
+                }
+            }
+            &-input {
+                width: 100%;
+                font-size: 64px;
+                font-weight: 700;
+                color: #fff;
+                border: none;
+                background: none;
+                outline: none;
+                padding-bottom: 4px;
+                @media(max-width: 992px) {
+                    font-size: 32px;
+                }
+
+                &::placeholder {
+                    -webkit-text-stroke: 1px #fff;
+                    color: transparent;
+                }
+            }
+            &-button {
+                width: fit-content;
+                border: none;
+                background: none;
+                text-align: left;
+                font-size: 64px;
+                font-weight: 500;
+                color: #fff;
+                position: relative;
+                cursor: pointer;
+                @media(max-width: 992px) {
+                    font-size: 32px;
+                }
+
+                &:after {
+                    content: '';
+                    width: 72px;
+                    height: 64px;
+                    background: url('../../img/icons/send-arrow.svg') center center no-repeat;
+                    position: absolute;
+                    top: 50%;
+                    left: calc(100% + 24px);
+                    transform: translate(0, -50%);
+                    @media(max-width: 992px) {
+                        width: 45px;
+                        height: 40px;
+                        background-size: cover;
+                    }
+                }
+            }
+        }
+    }
+}

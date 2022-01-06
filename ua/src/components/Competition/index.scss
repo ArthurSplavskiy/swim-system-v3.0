@@ -1,0 +1,27 @@
+.competition-section {
+    margin-bottom: 120px;
+
+    &__body {
+        margin-top: 80px;
+    }
+    .grid-layout {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 64px;
+        @media(max-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: filter 0.3s ease;
+            filter: grayscale(1);
+
+            &:hover {
+                filter: grayscale(0);
+            }
+        }
+    }
+}

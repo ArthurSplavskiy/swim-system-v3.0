@@ -1,0 +1,91 @@
+@import '../../other/mixins.scss';
+
+.pool-section {
+
+    .article-block .content {
+        @media(max-width: 992px) {
+            flex-direction: column-reverse;
+
+            .content-side {
+                margin-bottom: 32px;
+            }
+            .image-side {
+                margin-bottom: 48px;
+            }
+        }
+    }
+    .section-head {
+        @include adaptiv-value('margin-bottom', 160, 48, 1);
+    }
+    .section-description {
+        @include adaptiv-value('margin-bottom', 117, 32, 1);
+    }
+    .article-block {
+        position: relative;
+        z-index: 2;
+    }
+    .pool-items {
+        position: relative;
+        z-index: 1;
+    }
+    .pool-item {
+        overflow: hidden;
+        position: relative;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        z-index: 1;
+        @media(max-width: 992px) {
+            flex-direction: column;
+            margin-bottom: 48px;
+            .line-side {
+                margin-bottom: 32px;
+            }
+        }
+
+        &.small {
+            z-index: 2;
+            .line-side {
+                flex: 0 0 308/1200 * 100%;
+            }
+            .linebar {
+                margin-top: 70%;
+                @media(max-width: 992px) {
+                    margin-top: 0;
+                }
+            }
+            .image-side {
+               flex: 0 0 892/1200 * 100%;
+            }
+        }
+        .line-side {
+            flex: 0 0 462/1200 * 100%;
+        }
+        .image-side {
+            flex: 0 0 738/1200 * 100%;
+        }
+    }
+
+    .linebar {
+        margin-top: 50%;
+        @media(max-width: 992px) {
+            margin-top: 0;
+        }
+        
+        .descrption {
+            white-space: nowrap;
+            color: #828282;
+            text-transform: uppercase;
+            font-size: 10px;
+            font-weight: 500;
+            @include adaptiv-value('margin-bottom', 45, 16, 1);
+        }
+        .line {
+            transform-origin: 0 0;
+            will-change: transform;
+            width: 100%;
+            background: #828282;
+            height: 1px;
+        }
+    }
+}
