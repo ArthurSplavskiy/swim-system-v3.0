@@ -6,7 +6,6 @@ gsap.registerPlugin(SplitText);
 
 
 const hideLine = () => {
-    console.log('INIT')
     gsap.set('._text-on-load .split-line .split-line', {
         y: '150%',
         rotate: 15,

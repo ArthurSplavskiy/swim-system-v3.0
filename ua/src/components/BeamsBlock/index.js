@@ -15,16 +15,14 @@ const BeamsBlock = () => {
 
     let tablesItem = useRef(null)
     let dropsItem = useRef(null)
-    let swimmerImage = useRef(null)
+
+    const getImageSize = ({ target: img }) => {
+        let swimmerHeight = img.offsetHeight;
+        tablesItem.current.style.bottom = (swimmerHeight / 3.1) + 'px';
+        dropsItem.current.style.bottom = - (swimmerHeight / 1.2) + 'px';
+    }
     
     useEffect(() => {
-        let swimmerHeight
-
-        swimmerImage.current.onload = () => {
-            swimmerHeight = swimmerImage.current.offsetHeight
-            tablesItem.current.style.bottom = (swimmerHeight / 3.1) + 'px';
-            dropsItem.current.style.bottom = - (swimmerHeight / 1.2) + 'px';
-        }
 
         ScrollTrigger.matchMedia({
 
@@ -88,7 +86,7 @@ const BeamsBlock = () => {
             <div className="parallax-swimmer">
                 <picture>
                     <source srcSet={parallaxSwimmerWebp} type="image/webp" />
-                    <img ref={swimmerImage} src={parallaxSwimmer} alt="Swim System" />
+                    <img onLoad={(e) => getImageSize(e)} src={parallaxSwimmer} alt="Swim System" />
                 </picture>
             </div>
             

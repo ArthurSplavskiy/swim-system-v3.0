@@ -6,7 +6,6 @@ gsap.registerPlugin(SplitText);
 
 
 const hideLine = () => {
-    console.log('INIT')
     gsap.set('._text-on-load .split-line .split-line', {
         y: '150%',
         rotate: 15,
@@ -90,8 +89,9 @@ class fadeInScroll {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     anim(entry.target)
+                    console.log('Intersection in')
                 } else {
-                    //console.log('out')
+                    console.log('Intersection out')
                     //this.animationOut(entry.target)
                 }
             })
